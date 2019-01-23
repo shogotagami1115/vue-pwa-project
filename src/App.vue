@@ -9,7 +9,7 @@
     <div id="container">
       <p>(1)ServiceWorker</p>
       <ul>
-        <li><a href="#" target="_blank">キャッシュしてる</a></li>
+        <router-link to="image_cache">キャッシュしてる</router-link>
         <li><a href="#" target="_blank">キャッシュしてない</a></li>
       </ul>
     </div>
@@ -26,7 +26,7 @@
         <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
       </ul>
     </div>
-    <!-- <router-view/> -->
+    <router-view/>
   </div>
 </template>
 

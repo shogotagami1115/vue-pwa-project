@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header></Header>
     <div id="logo-wrapper">
       <img src="./assets/logo.png" class="pwa">
     </div>
@@ -7,28 +8,23 @@
     <p>~Vue.jsでPWAを作ってみた~</p>
 
     <div id="container">
-      <p>(1)ServiceWorker</p>
-      <ul>
-        <li><a href="#" target="_blank">キャッシュしてる</a></li>
-        <li><a href="#" target="_blank">キャッシュしてない</a></li>
-      </ul>
-    </div>
-    <div id="container">
-      <p>(2)オフラインApps</p>
-      <ul>
-        <li><a href="#" target="_blank">オンラインで動くところ</a></li>
-        <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
-      </ul>
-    </div>
-    <div id="container">
-      <p>(3)プッシュ通知</p>
-      <ul>
-        <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
-      </ul>
+      <first-view></first-view>
     </div>
     <!-- <router-view/> -->
   </div>
 </template>
+
+<script>
+import Header from './components/Header.vue'
+import FirstView from './components/FirstView.vue'
+export default {
+  name: 'App',
+  components: {
+    Header,
+    FirstView
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

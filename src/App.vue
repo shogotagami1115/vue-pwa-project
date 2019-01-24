@@ -1,33 +1,11 @@
 <template>
   <div id="app">
     <Header></Header>
-    <div id="logo-wrapper">
-      <img src="./assets/logo.png" class="pwa">
-    </div>
-    <h1>PWA チュートリアル</h1>
-    <p>~Vue.jsでPWAを作ってみた~</p>
-
-    <div id="container">
-      <first-view></first-view>
-      <p>(1)ServiceWorker</p>
-      <ul>
-        <router-link to="image_cache">キャッシュしてる</router-link>
-        <li><a href="#" target="_blank">キャッシュしてない</a></li>
-      </ul>
-    </div>
-    <div id="container">
-      <p>(2)オフラインApps</p>
-      <ul>
-        <li><a href="#" target="_blank">オンラインで動くところ</a></li>
-        <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
-      </ul>
-    </div>
-    <div id="container">
-      <p>(3)プッシュ通知</p>
-      <ul>
-        <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
-      </ul>
-    </div>
+    <FirstView v-if="isFirstView"></FirstView>
+    <ServiceWorker v-if="isServiceWorker"></ServiceWorker>
+    <OfflineApps v-if="isOfflineApps"></OfflineApps>
+    <PushNotification v-if="isPushNotification"></PushNotification>
+    <Tutorial v-if="isTutorial"></Tutorial>
     <router-view/>
   </div>
 </template>
@@ -35,11 +13,19 @@
 <script>
 import Header from './components/Header.vue'
 import FirstView from './components/FirstView.vue'
+import ServiceWorker from './components/ServiceWorker.vue'
+import OfflineApps from './components/OfflineApps.vue'
+import PushNotification from './components/PushNotification.vue'
+import Tutorial from './components/Tutorial.vue'
 export default {
   name: 'App',
   components: {
     Header,
-    FirstView
+    FirstView,
+    ServiceWorker,
+    OfflineApps,
+    PushNotification,
+    Tutorial,
   }
 }
 </script>
@@ -53,16 +39,6 @@ export default {
   color: #2c3e50;
   li {
     list-style-type: none;
-  }
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
 }
 </style>

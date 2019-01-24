@@ -1,39 +1,41 @@
 <template>
   <div class="header">
-    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark my-3">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand title" href="#">はじめてのSPA</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">(1) はじめに</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              (2) ServiceWorker
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              (2) オフラインApps
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">(4) プッシュ通知</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <b-navbar toggleable="md" type="dark" variant="info">
+
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+      <b-navbar-brand href="#">はじめてのPWA</b-navbar-brand>
+
+      <b-collapse is-nav id="nav_collapse">
+
+        <b-navbar-nav class="ml-auto">
+
+          <b-navbar-nav>
+            <b-nav-item href="#">(1)はじめに</b-nav-item>
+          </b-navbar-nav>
+
+          <b-nav-item-dropdown text="(2)Service Worker" right>
+            <b-dropdown-item href="#">キャッシュしてる</b-dropdown-item>
+            <b-dropdown-item href="#">キャッシュしてない</b-dropdown-item>
+          </b-nav-item-dropdown>
+
+          <b-nav-item-dropdown text="(3)オフラインApps" right>
+            <b-dropdown-item href="#">オンラインで動くところ</b-dropdown-item>
+            <b-dropdown-item href="#">オフラインで動くところ</b-dropdown-item>
+          </b-nav-item-dropdown>
+
+          <b-navbar-nav>
+            <b-nav-item href="#">(4)プッシュ通知</b-nav-item>
+          </b-navbar-nav>
+
+          <b-navbar-nav>
+            <b-nav-item href="#">(5)チュートリアル的なもの</b-nav-item>
+          </b-navbar-nav>
+
+        </b-navbar-nav>
+
+      </b-collapse>
+    </b-navbar>
   </div>
 </template>
 
@@ -48,6 +50,8 @@ export default {
 .header {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-weight: bold;
+  color: white;
+  background-color: red !important;
   .title {
     margin-left: 2rem;
     font-size: 2rem;

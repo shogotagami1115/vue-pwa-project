@@ -15,7 +15,7 @@
           </b-navbar-nav>
 
           <b-nav-item-dropdown text="(2)Service Worker" right>
-            <b-dropdown-item href="#">キャッシュしてる</b-dropdown-item>
+            <b-link :to="image_cache">キャッシュしてる</b-link>
             <b-dropdown-item href="#">キャッシュしてない</b-dropdown-item>
           </b-nav-item-dropdown>
 

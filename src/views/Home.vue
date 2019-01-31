@@ -5,25 +5,27 @@
     </div>
     <h1>PWA チュートリアル</h1>
     <p>~Vue.jsでPWAを作ってみた~</p>
-    <div id="container">
-      <p>(1)ServiceWorker</p>
-      <ul>
-        <router-link to="image_cache">キャッシュしてる</router-link>
-        <li><a href="#" target="_blank">キャッシュしてない</a></li>
-      </ul>
-    </div>
-    <div id="container">
-      <p>(2)オフラインApps</p>
-      <ul>
-        <li><a href="#" target="_blank">オンラインで動くところ</a></li>
-        <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
-      </ul>
-    </div>
-    <div id="container">
-      <p>(3)プッシュ通知</p>
-      <ul>
-        <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
-      </ul>
+    <div class="contents-wrapper">
+      <div id="container">
+        <p id="title">(1)ServiceWorker</p>
+        <ul>
+          <router-link to="image_cache">キャッシュしてる</router-link>
+          <li><a href="#" target="_blank">キャッシュしてない</a></li>
+        </ul>
+      </div>
+      <div id="container">
+        <p>(2)オフラインApps</p>
+        <ul>
+          <li><a href="#" target="_blank">オンラインで動くところ</a></li>
+          <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
+        </ul>
+      </div>
+      <div id="container">
+        <p>(3)プッシュ通知</p>
+        <ul>
+          <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +45,13 @@ export default {
   }
   h1{
     font-size: 3rem;
+  }
+  .contents-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
   }
 }
 </style>

@@ -1,18 +1,57 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="logo-wrapper">
+      <img src="../assets/logo.png" class="pwa">
+    </div>
+    <h1>PWA チュートリアル</h1>
+    <p>~Vue.jsでPWAを作ってみた~</p>
+    <div class="contents-wrapper">
+      <div id="container">
+        <p id="title">(1)ServiceWorker</p>
+        <ul>
+          <router-link to="image_cache">キャッシュしてる</router-link>
+          <li><a href="#" target="_blank">キャッシュしてない</a></li>
+        </ul>
+      </div>
+      <div id="container">
+        <p>(2)オフラインApps</p>
+        <ul>
+          <li><a href="#" target="_blank">オンラインで動くところ</a></li>
+          <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
+        </ul>
+      </div>
+      <div id="container">
+        <p>(3)プッシュ通知</p>
+        <ul>
+          <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-  }
 }
 </script>
+
+<style lang="scss">
+.home {
+  #logo-wrapper {
+    img {
+      width: 400px;
+    }
+  }
+  h1{
+    font-size: 3rem;
+  }
+  .contents-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+  }
+}
+</style>

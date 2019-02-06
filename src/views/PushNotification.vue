@@ -1,6 +1,6 @@
 <template>
   <div class="push-notification">
-    <p>プッシュ通知について</p>
+    <h1>This is push notification!</h1>
   </div>
 </template>
 

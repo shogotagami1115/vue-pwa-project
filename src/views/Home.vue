@@ -9,7 +9,7 @@
       <div id="container">
         <p id="title">(1)ServiceWorker</p>
         <ul>
-          <router-link to="image_cache">キャッシュしてる</router-link>
+          <li><router-link to="image_cache">キャッシュしてる</router-link></li>
           <li><a href="#" target="_blank">キャッシュしてない</a></li>
         </ul>
       </div>
@@ -23,7 +23,7 @@
       <div id="container">
         <p>(3)プッシュ通知</p>
         <ul>
-          <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
+          <li><router-link to="push_notification">プッシュ通知はこんな感じ！</router-link></li>
         </ul>
       </div>
     </div>

@@ -1,41 +1,19 @@
 <template>
-  <div class="header">
-    <b-navbar toggleable="md" type="dark" variant="info">
-
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-      <b-navbar-brand href="#">はじめてのPWA</b-navbar-brand>
-
-      <b-collapse is-nav id="nav_collapse">
-
-        <b-navbar-nav class="ml-auto">
-
-          <b-navbar-nav>
-            <b-nav-item href="#">(1)はじめに</b-nav-item>
-          </b-navbar-nav>
-
-          <b-nav-item-dropdown text="(2)Service Worker" right>
-            <b-dropdown-item><b-link :to="image_cache">キャッシュしてる</b-link></b-dropdown-item>
-            <b-dropdown-item href="#">キャッシュしてない</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown text="(3)オフラインApps" right>
-            <b-dropdown-item href="#">オンラインで動くところ</b-dropdown-item>
-            <b-dropdown-item href="#">オフラインで動くところ</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-navbar-nav>
-            <b-nav-item href="#">(4)プッシュ通知</b-nav-item>
-          </b-navbar-nav>
-
-          <b-navbar-nav>
-            <b-nav-item href="#">(5)チュートリアル的なもの</b-nav-item>
-          </b-navbar-nav>
-
-        </b-navbar-nav>
-
-      </b-collapse>
-    </b-navbar>
+  <div class="header-container">
+    <div class="top-link">
+      <nav>
+        <router-link tag="p" to="/"><a>Vue.jsでPWAをつくった</a></router-link>
+      </nav>
+    </div>
+    <div class="sub-links">
+      <nav>
+        <ul>
+          <router-link tag="li" to="/about"><a>(1) はじめに</a></router-link>
+          <router-link tag="li" to="/about"><a>(2) キャッシュ</a></router-link>
+          <router-link tag="li" to="/about"><a>(3) プッシュ通知</a></router-link>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -47,21 +25,34 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.header {
+.header-container {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  color: white;
-  background-color: red !important;
-  .title {
-    margin-left: 2rem;
-    font-size: 2rem;
-    margin: 0 auto;
+  background-color: #4285F4;
+  padding-top: .5rem;
+  padding-bottom: .1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  .top-link {
+    a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: white;
+    }
   }
-  ul {
-    margin-left: auto;
-  }
-  li {
-    margin-right: 1rem;
+  .sub-links{
+    padding-bottom: .5rem;
+    ul {
+      display: flex;
+      justify-content: center;
+      a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        display: inline-block;
+        margin-right: 5rem;
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 </style>

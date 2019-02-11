@@ -4,7 +4,9 @@
 
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-      <b-navbar-brand href="#">はじめてのPWA</b-navbar-brand>
+      <b-navbar-brand>
+        <router-link to="/" class="title">はじめてのPWA</router-link>
+      </b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
 
@@ -53,9 +55,7 @@ export default {
   color: white;
   background-color: red !important;
   .title {
-    margin-left: 2rem;
-    font-size: 2rem;
-    margin: 0 auto;
+    color: white
   }
   ul {
     margin-left: auto;

@@ -6,7 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import firebase from 'firebase/app'
 import 'firebase/app'
 
-import 'src/registerServiceWorker'
+// import 'src/registerServiceWorker'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 

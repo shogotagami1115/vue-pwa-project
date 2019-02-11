@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import BootstrapVue from 'bootstrap-vue'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/app'
 
-import './registerServiceWorker'
+import 'src/registerServiceWorker'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -29,3 +30,6 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
+Notification.requestPermission(function(status) {
+  console.log("通知の許可:", status);
+})

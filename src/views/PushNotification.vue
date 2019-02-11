@@ -123,22 +123,11 @@ export default {
     }
   },
   created() {
-    if ('serviceWorker' in navigator && 'PushManager' in window) {
-      console.log('Service Worker and Push is supported');
-
-      navigator.serviceWorker.register('registerServiceWorker.js')
-      .then(function(swReg) {
-        console.log('Service Worker is registered', swReg);
-
-        this.swRegistration = swReg;
-        this.initializeUI();
-      })
-      .catch(function(error) {
-        console.error('Service Worker Error', error);
-      });
-    } else {
-      console.warn('Push messaging is not supported');
-      this.pushButton.textContent = 'Push Not Supported';
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker
+        .register('registerServiceWorker.js')
+        .then(function(){console.log('Service Worker Registered');}
+      );
     }
   }
 }

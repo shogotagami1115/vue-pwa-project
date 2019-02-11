@@ -10,7 +10,7 @@
         <ul>
           <router-link tag="li" to="/about"><a>(1) はじめに</a></router-link>
           <router-link tag="li" to="/about"><a>(2) キャッシュ</a></router-link>
-          <router-link tag="li" to="/about"><a>(3) プッシュ通知</a></router-link>
+          <router-link tag="li" to="/push_notification"><a>(3) プッシュ通知</a></router-link>
         </ul>
       </nav>
     </div>
@@ -26,6 +26,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .header-container {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 10rem;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-weight: bold;
   background-color: #4285F4;

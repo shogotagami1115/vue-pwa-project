@@ -1,21 +1,34 @@
 <template>
   <div class="push-notification">
-    <header>
-      <h1>プッシュ通知はこちらから！</h1>
-    </header>
     <main>
-      <p>
-        <button disabled class="js-push-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-          Enable Push Messaging
-        </button>
-      </p>
-      <section class="subscription-details js-subscription-details is-invisible">
-        <p>1. 以下のendpointをコピー</p>
-        <p>2. https://web-push-codelab.glitch.me/ へアクセス</p>
-        <p>3. endpointを Subscription to Send To へペースト</p>
-        <p>4. send push message！</p>
-        <pre><code class="js-subscription-json"></code></pre>
-      </section>
+      <h1>PWAのプッシュ通知</h1>
+      <div class="contants-wrapper">
+        <h2>プッシュ通知ってなに？</h2>
+        <p>プッシュ通知とは、ブラウザやアプリケーション上でユーザーへ送られる通知のこと。</p>
+        <p>そう、こんな感じで。</p>
+        <img src="../assets/push.gif" width="750" height="220" alt="GIF" border="0" align="center" hspace="10" vspace="10">
+        <p class="note">【注意】2019年2月現在、PWAアプリケーションにおけるプッシュ通知がサポートされているのは、Androidのみです。</p>
+        <p>今回はこのプッシュ通知の裏側のコード、動きについて簡単に説明します。</p>
+      </div>
+      <div id="line"></div>
+      <div class="contants-wrapper">
+        <h2>プッシュ通知のこれまで</h2>
+        <p>プッシュ通知がブラウザに対応してきたのはここ最近のこと。</p>
+        <p>もともとはスマホ向けが一般的で、ブラウザ対応してきたのは2017年4月ごろ。</p>
+        <p>ブラウザの標準規格が確率したことがキッカケで、BoltzEngineが対応したという経緯。</p>
+      </div>
+      <div id="line"></div>
+      <div class="contants-wrapper">
+        <h2>プッシュ通知実装の仕組み・流れ</h2>
+        <ul>
+          <li>1.いまのブラウザがService Workerとプッシュ通知をサポートしているかどうか確認</li>
+
+          <li>2.サポートしていたら<span class="code-inline-wrapper">sw.js</span> ファイルをSWとして登録する</li>
+          <li>3.ユーザがプッシュ通知にすでに登録されているかどうかチェックする</li>
+          <li>4.まだ登録されていなければ、プッシュ通知を送る対象としてユーザを登録する</li>
+          <li>5.ごにょごにょする</li>
+        </ul>
+      </div>
     </main>
   </div>
 </template>
@@ -30,109 +43,32 @@ export default {
       isSubscribed: false,
       swRegistration: "",
     }
-  },
-  methods: {
-    urlB64ToUint8Array(base64String) {
-      const padding = '='.repeat((4 - base64String.length % 4) % 4);
-      const base64 = (base64String + padding)
-        .replace(/-/g, '+').replace(/_/g, '/');
-
-      const rawData = window.atob(base64);
-      const outputArray = new Uint8Array(rawData.length);
-
-      for (let i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
-      }
-      return outputArray;
-    },
-    updateBtn() {
-      if (Notification.permission === 'denied') {
-        this.pushButton.textContent = 'Push Messaging Blocked.';
-        this.pushButton.disabled = true;
-        this.updateSubscriptionOnServer(null);
-        return;
-      }
-
-      if (this.isSubscribed) {
-        this.pushButton.textContent = 'Disable Push Messaging';
-      } else {
-        this.pushButton.textContent = 'Enable Push Messaging';
-      }
-
-      this.pushButton.disabled = false;
-    },
-    updateSubscriptionOnServer(subscription) {
-      // TODO: Send subscription to application server
-
-      const subscriptionJson = document.querySelector('.js-subscription-json');
-      const subscriptionDetails =
-        document.querySelector('.js-subscription-details');
-
-      if (subscription) {
-        subscriptionJson.textContent = JSON.stringify(subscription);
-        subscriptionDetails.classList.remove('is-invisible');
-      } else {
-        subscriptionDetails.classList.add('is-invisible');
-      }
-    },
-    subscribeUser() {
-      const applicationServerKey = this.urlB64ToUint8Array(this.applicationServerPublicKey);
-      this.swRegistration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: applicationServerKey
-      })
-      .then(function(subscription) {
-        console.log('User is subscribed');
-
-        this.updateSubscriptionOnServer(subscription);
-
-        this.isSubscribed = true;
-
-        this.updateBtn();
-      })
-      .catch(function(err) {
-        console.log('Failed to subscribe the user: ', err);
-        this.updateBtn();
-      });
-    },
-    initializeUI() {
-      this.pushButton.addEventListener('click', function() {
-        this.pushButton.disabled = true;
-        if (this.isSubscribed) {
-          // TODO: Unsubscribe user
-        } else {
-          this.subscribeUser();
-        }
-      });
-
-      // Set the initial subscription value
-      this.swRegistration.pushManager.getSubscription()
-      .then(function(subscription) {
-        this.isSubscribed = !(subscription === null);
-
-        this.updateSubscriptionOnServer(subscription);
-
-        if (this.isSubscribed) {
-          console.log('User IS subscribed.');
-        } else {
-          console.log('User is NOT subscribed.');
-        }
-
-        this.updateBtn();
-      });
-    }
-  },
-  created() {
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker
-        .register('registerServiceWorker.js')
-        .then(function(){console.log('Service Worker Registered');}
-      );
-    }
   }
 }
 </script>
 
 <style scoped lang="scss">
-
+.push-notification {
+  margin-top: 2rem;
+  width: 800px;
+  margin: 0 auto;
+  h1 {
+    margin: 2rem 0;
+    font-weight: bold;
+  }
+  h2 {
+    margin: 2rem 0;
+  }
+  .contants-wrapper {
+    margin: 4rem 0;
+    .note {
+      color: lightcoral;
+    }
+  }
+  #line {
+    border-top: dotted 5px gray;
+    width: 33%;
+    margin: 0 auto;
+  }
+}
 </style>

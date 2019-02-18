@@ -7,7 +7,7 @@
     <p>~Vue.jsでPWAを作ってみた~</p>
     <div class="contents-wrapper">
       <div id="container">
-        <p id="title">(1)ServiceWorker</p>
+        <p id="title">(1)はじめに</p>
         <ul>
           <li><router-link to="image_cache">キャッシュしてる</router-link></li>
           <li><a href="#" target="_blank">キャッシュしてない</a></li>

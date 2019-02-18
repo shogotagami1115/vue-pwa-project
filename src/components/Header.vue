@@ -9,7 +9,7 @@
       <nav>
         <ul>
           <router-link tag="li" to="/about"><a>(1) はじめに</a></router-link>
-          <router-link tag="li" to="/about"><a>(2) キャッシュ</a></router-link>
+          <router-link tag="li" to="/image_cache"><a>(2) キャッシュ</a></router-link>
           <router-link tag="li" to="/about"><a>(3) プッシュ通知</a></router-link>
         </ul>
       </nav>

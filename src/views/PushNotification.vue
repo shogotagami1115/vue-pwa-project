@@ -7,7 +7,7 @@
       <p>これもPWA(ServiceWorker)を使うことによって、比較的簡単に実装ができちゃう。</p>
     </div>
     <div id="contents-wrapper">
-      <h2>- プッシュ通知とは -</h2>
+      <h2>- ServiceWorkerが何をするのか？ -</h2>
       <p>みなさまおなじみプッシュ通知。説明するまでもないですね。</p>
       <p>これもPWA(ServiceWorker)を使うことによって、比較的簡単に実装ができちゃう。</p>
     </div>

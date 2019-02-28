@@ -1,4 +1,3 @@
-
 const CACHE_NAME  = "pwa-project-cache-v0.1";
 
 const urlsToCache = [
@@ -45,8 +44,8 @@ self.addEventListener('fetch', function(event) {
   console.log(event.request.url);
 
   const online = navigator.onLine;
-  // ファイルパス ~/test.htmlにアクセスすると、このファイル自体は無いがServiceWorkerがResponseを作成して表示してくれる
-  if (event.request.url.indexOf('test.html') != -1) {
+  // ファイルパス ~/testにアクセスすると、このファイル自体は無いがServiceWorkerがResponseを作成して表示してくれる
+  if (event.request.url.indexOf('test') != -1) {
     return event.respondWith(new Response('任意のURLの内容をここで自由に返却できる'));
   }
 

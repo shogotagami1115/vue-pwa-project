@@ -1,16 +1,18 @@
 <template>
-  <div class="push-notification">
-    <p>プッシュ通知について</p>
+  <div class="Footer">
+    <p><router-link to="/">TOPへ戻る</router-link></p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PushNotification',
+  name: 'Footer',
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+p {
+  margin-top: 5rem;
+}
 </style>

@@ -10,7 +10,7 @@
         <ul>
           <router-link tag="li" to="/about"><a>(1) はじめに</a></router-link>
           <router-link tag="li" to="/image_cache"><a>(2) キャッシュ</a></router-link>
-          <router-link tag="li" to="/push_notification"><a>(3) プッシュ通知</a></router-link>
+          <router-link tag="li" to="/push_notification"><a>(おまけ) プッシュ通知</a></router-link>
         </ul>
       </nav>
     </div>
@@ -29,7 +29,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-weight: bold;
   background-color: #4285F4;
-  padding-top: .5rem;
+  padding-top: 1.5rem;
   padding-bottom: .1rem;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   .top-link {

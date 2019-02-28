@@ -4,7 +4,6 @@
       <img src="../assets/logo.png" class="pwa">
     </div>
     <h1>PWA チュートリアル</h1>
-    <p>~Vue.jsでPWAを作ってみた~</p>
     <div class="contents-wrapper">
       <div id="container" class="container">
         <p id="title">(1)このサイトについて</p>
@@ -45,8 +44,10 @@ export default {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 30%;
     height: 100px;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 </style>

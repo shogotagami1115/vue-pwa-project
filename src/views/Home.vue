@@ -6,21 +6,16 @@
     <h1>PWA チュートリアル</h1>
     <p>~Vue.jsでPWAを作ってみた~</p>
     <div class="contents-wrapper">
-      <div id="container">
-        <p>(1) はじめに</p>
-        <router-link to="/about"><a>PWAとは</a></router-link>
-      </div>
-      <div id="container">
-        <p>(2)オフラインApps</p>
+      <div id="container" class="container">
+        <p id="title">(1)このサイトについて</p>
         <ul>
-          <li><a href="#" target="_blank">オンラインで動くところ</a></li>
-          <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
+          <router-link to="about">はじめに</router-link>
         </ul>
       </div>
-      <div id="container">
-        <p>(3)プッシュ通知</p>
+      <div id="container" class="container">
+        <p>(2)オフラインApps</p>
         <ul>
-          <li><router-link to="push_notification">プッシュ通知はこんな感じ！</router-link></li>
+          <router-link to="image_cache">画像ページ</router-link>
         </ul>
       </div>
     </div>
@@ -42,6 +37,9 @@ export default {
   }
   h1{
     font-size: 3rem;
+  }
+  .container {
+    margin: 0 10px;
   }
   .contents-wrapper {
     margin-top: 30px;

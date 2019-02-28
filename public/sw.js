@@ -2,7 +2,6 @@ const CACHE_NAME  = "pwa-project-cache-v0.1";
 
 const urlsToCache = [
     "index.html",
-    "img/plume.jpg",
 ];
 
 // 残したいキャッシュのバージョンをこの配列に入れる

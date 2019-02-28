@@ -4,26 +4,17 @@
       <img src="../assets/logo.png" class="pwa">
     </div>
     <h1>PWA チュートリアル</h1>
-    <p>~Vue.jsでPWAを作ってみた~</p>
     <div class="contents-wrapper">
-      <div id="container">
-        <p id="title">(1)ServiceWorker</p>
+      <div id="container" class="container">
+        <p id="title">(1)このサイトについて</p>
         <ul>
-          <router-link to="image_cache">キャッシュしてる</router-link>
-          <li><a href="#" target="_blank">キャッシュしてない</a></li>
+          <router-link to="about">はじめに</router-link>
         </ul>
       </div>
-      <div id="container">
+      <div id="container" class="container">
         <p>(2)オフラインApps</p>
         <ul>
-          <li><a href="#" target="_blank">オンラインで動くところ</a></li>
-          <li><a href="#" target="_blank">オンラインで動かないところ</a></li>
-        </ul>
-      </div>
-      <div id="container">
-        <p>(3)プッシュ通知</p>
-        <ul>
-          <li><a href="#" target="_blank">プッシュ通知はこんな感じ！</a></li>
+          <router-link to="image_cache">画像ページ</router-link>
         </ul>
       </div>
     </div>
@@ -46,12 +37,17 @@ export default {
   h1{
     font-size: 3rem;
   }
+  .container {
+    margin: 0 10px;
+  }
   .contents-wrapper {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 30%;
     height: 100px;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 </style>

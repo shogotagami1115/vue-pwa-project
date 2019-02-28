@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ImageCache from './views/ImageCache'
+import PushNotification from './views/PushNotification'
+import About from './views/About'
 
 Vue.use(Router)
 
@@ -18,6 +20,16 @@ export default new Router({
       path: '/image_cache',
       name: 'image_cache',
       component: ImageCache
+    },
+    {
+      path: '/push_notification',
+      name: 'push_notification',
+      component: PushNotification
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     }
   ]
 })

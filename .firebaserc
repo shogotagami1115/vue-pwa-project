@@ -1,6 +1,6 @@
 {
   "projects": {
-    "production": "pwa-project-2be48",
+    "production": "pwa-vue-project",
     "default": "pwa-project-2be48"
   }
 }
